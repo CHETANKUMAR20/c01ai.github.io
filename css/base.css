@@ -1,0 +1,265 @@
+/* =====================================
+   C01AI FOUNDER SITE
+   BASE DESIGN SYSTEM
+===================================== */
+
+
+/* ===== CSS RESET ===== */
+
+*,
+*::before,
+*::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+
+/* ===== ROOT VARIABLES ===== */
+
+:root {
+
+/* colors */
+
+--bg-primary: #0a0a0a;
+--bg-secondary: #111111;
+
+--text-primary: #ffffff;
+--text-secondary: #a0a0a0;
+
+--accent: #6e7cff;
+--accent-soft: rgba(110,124,255,0.2);
+
+--border: #1e1e1e;
+
+
+/* typography */
+
+--font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI",
+Roboto, Helvetica, Arial, sans-serif;
+
+--font-mono: "SF Mono", Consolas, Monaco, monospace;
+
+
+/* spacing */
+
+--space-xs: 4px;
+--space-sm: 8px;
+--space-md: 16px;
+--space-lg: 32px;
+--space-xl: 64px;
+--space-xxl: 120px;
+
+
+/* layout */
+
+--max-width: 1200px;
+
+
+/* transitions */
+
+--transition-fast: 0.2s ease;
+--transition-smooth: 0.4s ease;
+
+}
+
+
+
+/* ===== GLOBAL BODY ===== */
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+
+background: var(--bg-primary);
+color: var(--text-primary);
+
+font-family: var(--font-primary);
+font-size: 16px;
+line-height: 1.6;
+
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+
+overflow-x: hidden;
+
+}
+
+
+
+/* ===== TYPOGRAPHY ===== */
+
+h1,
+h2,
+h3,
+h4 {
+font-weight: 600;
+letter-spacing: -0.02em;
+}
+
+h1 {
+font-size: 64px;
+line-height: 1.1;
+}
+
+h2 {
+font-size: 42px;
+}
+
+h3 {
+font-size: 28px;
+}
+
+p {
+color: var(--text-secondary);
+max-width: 700px;
+}
+
+
+
+/* ===== LINKS ===== */
+
+a {
+
+text-decoration: none;
+color: inherit;
+
+transition: var(--transition-fast);
+
+}
+
+a:hover {
+color: var(--accent);
+}
+
+
+
+/* ===== LIST ===== */
+
+ul {
+list-style: none;
+}
+
+
+
+/* ===== IMAGES ===== */
+
+img {
+max-width: 100%;
+display: block;
+}
+
+
+
+/* ===== BUTTON ===== */
+
+button {
+
+border: none;
+outline: none;
+
+cursor: pointer;
+
+font-family: inherit;
+
+}
+
+
+
+/* ===== SECTION LAYOUT ===== */
+
+section {
+
+padding-top: var(--space-xxl);
+padding-bottom: var(--space-xxl);
+
+max-width: var(--max-width);
+margin: auto;
+
+padding-left: var(--space-lg);
+padding-right: var(--space-lg);
+
+}
+
+
+
+/* ===== CONTAINER ===== */
+
+.container {
+
+max-width: var(--max-width);
+margin: auto;
+
+}
+
+
+
+/* ===== GRID SYSTEM ===== */
+
+.grid {
+
+display: grid;
+gap: var(--space-lg);
+
+}
+
+
+
+/* ===== UTILITIES ===== */
+
+.center {
+text-align: center;
+}
+
+.muted {
+color: var(--text-secondary);
+}
+
+.accent {
+color: var(--accent);
+}
+
+
+
+/* ===== CANVAS BACKGROUND ===== */
+
+#neural-canvas {
+position: fixed;
+top: 0;
+left: 0;
+
+width: 100vw;
+height: 100vh;
+
+z-index: -2;
+
+background: #020617;
+}
+
+
+
+/* ===== CUSTOM CURSOR BASE ===== */
+
+.cursor {
+
+position: fixed;
+
+width: 12px;
+height: 12px;
+
+background: var(--accent);
+
+border-radius: 50%;
+
+pointer-events: none;
+
+transform: translate(-50%, -50%);
+
+z-index: 999;
+
+transition: transform 0.15s ease;
+
+}
