@@ -1,0 +1,33 @@
+@media (max-width:768px){
+
+#cursor-glow{
+display:none;
+}
+
+#ai-grid{
+opacity:0.4;
+}
+
+}
+
+@media (max-width:900px){
+
+#sidebar{
+
+width:180px;
+
+}
+
+#app{
+
+padding:60px 40px;
+
+}
+
+.card-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
