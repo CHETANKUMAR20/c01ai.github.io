@@ -1,26 +1,33 @@
-function loadJourney(){
+/* =====================================
+   FOUNDER JOURNEY SECTION
+===================================== */
 
-const container = document.querySelector("#journey .page-content")
+function loadJourney() {
 
-let timeline = ""
+const section = document.getElementById("journey")
 
-founderData.journey.forEach(item => {
+const journey = siteData.journey
 
-timeline += `
+let timelineItems = ""
 
-<div class="journey-card">
 
-<div class="journey-year">
-${item.year}
+journey.forEach(step => {
+
+timelineItems += `
+
+<div class="timeline-item reveal">
+
+<div class="timeline-year">
+${step.year}
 </div>
 
-<div class="journey-content">
-
-<h3>${item.title}</h3>
-
-<p>${item.description}</p>
-
+<div class="timeline-title">
+${step.title}
 </div>
+
+<p>
+${step.description}
+</p>
 
 </div>
 
@@ -28,17 +35,22 @@ ${item.year}
 
 })
 
-container.innerHTML = `
 
-<h2>Founder Journey</h2>
+section.innerHTML = `
 
-<p class="section-intro">
-Milestones in my journey building technology and AI systems.
+<div class="section-header reveal">
+
+<h2 class="section-title">Journey</h2>
+
+<p class="section-subtitle">
+The path of learning, experimentation, and building that led to the creation of C01AI.
 </p>
 
-<div class="journey-timeline">
+</div>
 
-${timeline}
+<div class="timeline">
+
+${timelineItems}
 
 </div>
 

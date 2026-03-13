@@ -1,20 +1,25 @@
-function loadPhilosophy(){
+/* =====================================
+   PHILOSOPHY SECTION RENDERER
+===================================== */
 
-const container = document.querySelector("#philosophy .page-content")
+function loadPhilosophy() {
 
-if(!container) return
+const section = document.getElementById("philosophy")
 
-let cards = ""
+const philosophyData = siteData.philosophy
 
-founderData.philosophy.forEach(item => {
 
-cards += `
+let philosophyCards = ""
 
-<div class="philosophy-card">
+philosophyData.forEach(item => {
 
-<h3>${item}</h3>
+philosophyCards += `
 
-<p>Building intelligent systems that automate work at scale.</p>
+<div class="experiment-card reveal">
+
+<h4>${item.title}</h4>
+
+<p>${item.description}</p>
 
 </div>
 
@@ -22,22 +27,25 @@ cards += `
 
 })
 
-container.innerHTML = `
 
-<h2>Founder Philosophy</h2>
+section.innerHTML = `
 
-<p class="philosophy-intro">
-I don't just write code. I build systems that create value at scale.
+<div class="section-header reveal">
+
+<h2 class="section-title">Philosophy</h2>
+
+<p class="section-subtitle">
+The principles behind how we build technology, startups, and intelligent systems at C01AI.
 </p>
 
-<div class="philosophy-grid">
+</div>
 
-${cards}
+<div class="experiment-grid">
+
+${philosophyCards}
 
 </div>
 
 `
-
-window.scrollTo(0,0)
 
 }

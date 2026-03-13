@@ -1,135 +1,207 @@
-const founderData = {
+/* =====================================
+   C01AI FOUNDER SITE
+   DATA SOURCE
+===================================== */
 
+const siteData = {
+
+founder: {
 name: "Chetan Kumar",
+role: "Founder & Builder",
+company: "C01AI",
+mission: "Building intelligent systems and AI-powered startups shaping the future of technology."
+},
 
-brand: "c01ai",
 
-tagline: "Building an AI company that automates work and creates leverage",
 
-/* PHILOSOPHY */
+/* =====================================
+   HERO
+===================================== */
+
+hero: {
+headline: "Building intelligent systems for the next era of technology.",
+subtext: "C01AI is building a new generation of AI-powered startups, tools, and intelligent systems designed to empower builders, creators, and innovators."
+},
+
+
+
+/* =====================================
+   VISION
+===================================== */
+
+vision: {
+title: "The Future of AI Systems",
+description:
+"The future belongs to builders who combine intelligence, automation, and creativity. C01AI exists to build systems that amplify human potential and enable small teams to create powerful technology."
+},
+
+
+
+/* =====================================
+   PHILOSOPHY
+===================================== */
 
 philosophy: [
-"Artificial Intelligence",
-"Automation",
-"Scalable Software"
+
+{
+title: "Builders Shape The Future",
+description:
+"The most impactful companies are built by individuals who see problems differently and dare to create new systems."
+},
+
+{
+title: "Small Teams Build Powerful Systems",
+description:
+"With the right tools and AI capabilities, small focused teams can build products that impact millions."
+},
+
+{
+title: "Experimentation Drives Innovation",
+description:
+"Great startups are born from relentless experimentation and curiosity about what technology can become."
+},
+
+{
+title: "AI Should Empower Builders",
+description:
+"Artificial intelligence should augment human creativity and give builders superpowers."
+}
+
 ],
 
-/* STARTUPS */
+
+
+/* =====================================
+   STARTUPS
+===================================== */
 
 startups: [
 
 {
-title:"AI Resume Builder",
-status:"Building",
-stack:"Python, AI, Cloud"
+name: "C01AI",
+tag: "Core Platform",
+description:
+"AI systems and intelligent infrastructure designed to power the next generation of technology startups."
 },
 
 {
-title:"DevOps AI Agent",
-status:"Building",
-stack:"Python, AI, Cloud"
+name: "AI Resume Builder",
+tag: "Product",
+description:
+"An AI-powered career intelligence platform that helps professionals create powerful resumes and discover opportunities."
 },
 
 {
-title:"AI Business Tools",
-status:"Building",
-stack:"Python, AI, Cloud"
-},
-
-{
-title:"Future Experiments",
-status:"Building",
-stack:"Python, AI, Cloud"
+name: "Future AI Products",
+tag: "Research",
+description:
+"Multiple experimental AI products currently being researched and developed under the C01AI ecosystem."
 }
 
 ],
 
-/* EXPERIMENTS */
 
-experiments:[
+
+/* =====================================
+   EXPERIMENTS
+===================================== */
+
+experiments: [
 
 {
-name:"AI Resume Analyzer",
-status:"Prototype",
-description:"Analyzes resumes using AI and gives improvement suggestions.",
-tech:"Python + LLM"
+title: "AI Agents",
+description:
+"Autonomous systems capable of performing tasks, making decisions, and interacting with digital environments."
 },
 
 {
-name:"DevOps AI Agent",
-status:"Building",
-description:"Automates server monitoring and DevOps operations.",
-tech:"Python + Docker"
+title: "AI DevOps Systems",
+description:
+"Intelligent infrastructure that automates deployment, monitoring, and scaling of software systems."
 },
 
 {
-name:"AI Website Builder",
-status:"Experiment",
-description:"Generate full websites using AI prompts.",
-tech:"LLM + JavaScript"
+title: "Automation Tools",
+description:
+"Tools that eliminate repetitive tasks and allow builders to focus on solving meaningful problems."
 },
 
 {
-name:"Startup Idea Generator",
-status:"Concept",
-description:"AI generates startup ideas based on market signals.",
-tech:"LLM"
+title: "Intelligent Software Infrastructure",
+description:
+"Next-generation development environments powered by machine intelligence."
 }
 
 ],
 
-/* JOURNEY */
+
+
+/* =====================================
+   FOUNDER JOURNEY
+===================================== */
 
 journey: [
 
 {
-year:"2024",
-title:"Started DevOps Journey",
-description:"Learning Linux, servers, cloud and automation."
+year: "Beginning",
+title: "Discovering Technology",
+description:
+"Started exploring programming, systems, and the fundamentals of building software."
 },
 
 {
-year:"2025",
-title:"Building AI Tools",
-description:"Started developing AI based tools and automation systems."
+year: "Learning Phase",
+title: "Understanding Systems",
+description:
+"Dived into programming, infrastructure, and modern technology stacks."
 },
 
 {
-year:"2026",
-title:"Building c01ai",
-description:"Working on AI systems and building the c01ai founder ecosystem."
+year: "Exploration",
+title: "Exploring Artificial Intelligence",
+description:
+"Began studying the possibilities of AI systems and intelligent automation."
+},
+
+{
+year: "Building",
+title: "Developing Tools and Projects",
+description:
+"Started building real tools, experiments, and software systems."
+},
+
+{
+year: "Present",
+title: "Launching C01AI",
+description:
+"Creating a startup ecosystem focused on intelligent systems and AI-driven products."
 }
 
 ],
 
-/* CONNECT */
 
-connect:[
+
+/* =====================================
+   CONNECT
+===================================== */
+
+connect: [
 
 {
-name:"GitHub",
-url:"https://github.com/CHETANKUMAR20",
-icon:"github"
+platform: "GitHub",
+link: "https://github.com/CHETANKUMAR20"
 },
 
 {
-name:"LinkedIn",
-url:"https://linkedin.com",
-icon:"linkedin"
+platform: "LinkedIn",
+link: "https://linkedin.com"
 },
 
 {
-name:"Email",
-url:"mailto:your@email.com",
-icon:"mail"
-},
-
-{
-name:"Twitter",
-url:"https://twitter.com",
-icon:"twitter"
+platform: "Email",
+link: "mailto:chetan@example.com"
 }
 
 ]
 
-}
+};

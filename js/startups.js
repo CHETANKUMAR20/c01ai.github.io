@@ -1,20 +1,29 @@
-function loadStartups(){
+/* =====================================
+   STARTUPS SECTION RENDERER
+===================================== */
 
-const container = document.querySelector("#startups .page-content")
+function loadStartups() {
 
-let cards = ""
+const section = document.getElementById("startups")
 
-founderData.startups.forEach(startup => {
+const startups = siteData.startups
 
-cards += `
+let startupCards = ""
 
-<div class="card">
 
-<h3>${startup.title}</h3>
+startups.forEach(startup => {
 
-<p>Status: ${startup.status}</p>
+startupCards += `
 
-<p>Stack: ${startup.stack}</p>
+<div class="product-card reveal">
+
+<span class="badge">${startup.tag}</span>
+
+<h3>${startup.name}</h3>
+
+<p>
+${startup.description}
+</p>
 
 </div>
 
@@ -22,13 +31,22 @@ cards += `
 
 })
 
-container.innerHTML = `
 
-<h2>AI Startups I'm Building</h2>
+section.innerHTML = `
 
-<div class="card-grid">
+<div class="section-header reveal">
 
-${cards}
+<h2 class="section-title">Startups</h2>
+
+<p class="section-subtitle">
+An ecosystem of AI-powered products and intelligent systems built under C01AI.
+</p>
+
+</div>
+
+<div class="product-grid">
+
+${startupCards}
 
 </div>
 

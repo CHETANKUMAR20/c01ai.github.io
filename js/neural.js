@@ -1,17 +1,39 @@
-const canvas = document.getElementById("neural-bg")
+/* =====================================
+   NEURAL NETWORK BACKGROUND
+===================================== */
+
+const canvas = document.getElementById("neural-canvas")
 const ctx = canvas.getContext("2d")
+
+let particles = []
+const particleCount = 80
+const maxDistance = 120
+
+
+/* ===============================
+   CANVAS SIZE
+=============================== */
+
+function resizeCanvas() {
 
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
-let nodes = []
+}
 
-const NODE_COUNT = 80
-const MAX_DISTANCE = 120
+window.addEventListener("resize", resizeCanvas)
 
-class Node{
+resizeCanvas()
 
-constructor(){
+
+
+/* ===============================
+   PARTICLE CLASS
+=============================== */
+
+class Particle {
+
+constructor() {
 
 this.x = Math.random() * canvas.width
 this.y = Math.random() * canvas.height
@@ -19,59 +41,82 @@ this.y = Math.random() * canvas.height
 this.vx = (Math.random() - 0.5) * 0.6
 this.vy = (Math.random() - 0.5) * 0.6
 
+this.size = 2
+
 }
 
-move(){
+move() {
 
 this.x += this.vx
 this.y += this.vy
 
-if(this.x < 0 || this.x > canvas.width) this.vx *= -1
-if(this.y < 0 || this.y > canvas.height) this.vy *= -1
+if (this.x < 0 || this.x > canvas.width) {
+this.vx *= -1
+}
+
+if (this.y < 0 || this.y > canvas.height) {
+this.vy *= -1
+}
 
 }
 
-draw(){
+draw() {
 
 ctx.beginPath()
-ctx.arc(this.x,this.y,2,0,Math.PI*2)
-ctx.fillStyle = "#00aaff"
+ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
+ctx.fillStyle = "rgba(110,124,255,0.8)"
 ctx.fill()
 
 }
 
 }
 
-function createNodes(){
 
-for(let i=0;i<NODE_COUNT;i++){
 
-nodes.push(new Node())
+/* ===============================
+   CREATE PARTICLES
+=============================== */
+
+function createParticles() {
+
+particles = []
+
+for (let i = 0; i < particleCount; i++) {
+
+particles.push(new Particle())
 
 }
 
 }
 
-function connectNodes(){
+createParticles()
 
-for(let i=0;i<nodes.length;i++){
 
-for(let j=i;j<nodes.length;j++){
 
-let dx = nodes[i].x - nodes[j].x
-let dy = nodes[i].y - nodes[j].y
+/* ===============================
+   CONNECT PARTICLES
+=============================== */
 
-let distance = Math.sqrt(dx*dx + dy*dy)
+function connectParticles() {
 
-if(distance < MAX_DISTANCE){
+for (let a = 0; a < particles.length; a++) {
+
+for (let b = a; b < particles.length; b++) {
+
+let dx = particles[a].x - particles[b].x
+let dy = particles[a].y - particles[b].y
+
+let distance = Math.sqrt(dx * dx + dy * dy)
+
+if (distance < maxDistance) {
+
+ctx.strokeStyle = "rgba(110,124,255,0.15)"
+ctx.lineWidth = 1
 
 ctx.beginPath()
 
-ctx.strokeStyle = "rgba(0,170,255,0.15)"
-ctx.lineWidth = 1
-
-ctx.moveTo(nodes[i].x,nodes[i].y)
-ctx.lineTo(nodes[j].x,nodes[j].y)
+ctx.moveTo(particles[a].x, particles[a].y)
+ctx.lineTo(particles[b].x, particles[b].y)
 
 ctx.stroke()
 
@@ -83,29 +128,27 @@ ctx.stroke()
 
 }
 
-function animate(){
 
-ctx.clearRect(0,0,canvas.width,canvas.height)
 
-nodes.forEach(node=>{
+/* ===============================
+   ANIMATION LOOP
+=============================== */
 
-node.move()
-node.draw()
+function animate() {
+
+ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+particles.forEach(p => {
+
+p.move()
+p.draw()
 
 })
 
-connectNodes()
+connectParticles()
 
 requestAnimationFrame(animate)
 
 }
 
-window.addEventListener("resize",()=>{
-
-canvas.width = window.innerWidth
-canvas.height = window.innerHeight
-
-})
-
-createNodes()
 animate()

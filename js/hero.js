@@ -1,26 +1,42 @@
-function loadHero(){
+/* =====================================
+   HERO SECTION RENDERER
+===================================== */
 
-const container = document.querySelector("#hero .page-content")
+function loadHero() {
 
-hero.innerHTML = `
+const heroSection = document.getElementById("hero")
 
-<div class="hero-container fade-in">
+const founder = siteData.founder
+const hero = siteData.hero
 
-<h1>${founderData.name}</h1>
 
-<p>Founder of <strong>${founderData.brand}</strong></p>
+heroSection.innerHTML = `
 
-<p>${founderData.tagline}</p>
+<div class="hero-container reveal">
 
-<h2>${founderData.brand}</h2>
+<div class="hero-meta">
+<span class="badge">${founder.company}</span>
+<span>${founder.role}</span>
+</div>
 
-<div class="hero-buttons">
+<h1 class="hero-title">
+Building <span class="hero-highlight">intelligent systems</span>
+for the next era of technology.
+</h1>
 
-<button class="btn">View Projects</button>
+<p class="hero-vision">
+${hero.subtext}
+</p>
 
-<button class="btn">Follow Journey</button>
+<div class="hero-actions">
 
-<button class="btn">Contact</button>
+<a href="#startups" class="btn btn-primary">
+Explore Startups
+</a>
+
+<a href="#experiments" class="btn">
+View Experiments
+</a>
 
 </div>
 

@@ -1,24 +1,27 @@
-function loadExperiments(){
+/* =====================================
+   EXPERIMENTS SECTION RENDERER
+===================================== */
 
-const container = document.querySelector("#experiments .page-content")
+function loadExperiments() {
 
-if(!container) return
+const section = document.getElementById("experiments")
 
-let cards = ""
+const experiments = siteData.experiments
 
-founderData.experiments.forEach(exp => {
+let experimentCards = ""
 
-cards += `
 
-<div class="experiment-card">
+experiments.forEach(exp => {
 
-<h3>${exp.name}</h3>
+experimentCards += `
 
-<p class="exp-status">${exp.status}</p>
+<div class="experiment-card reveal">
 
-<p>${exp.description}</p>
+<h4>${exp.title}</h4>
 
-<p class="exp-tech">${exp.tech}</p>
+<p>
+${exp.description}
+</p>
 
 </div>
 
@@ -26,22 +29,25 @@ cards += `
 
 })
 
-container.innerHTML = `
 
-<h2>AI Experiments Lab</h2>
+section.innerHTML = `
 
-<p class="section-intro">
-Prototypes and AI systems currently under exploration.
+<div class="section-header reveal">
+
+<h2 class="section-title">Experiments</h2>
+
+<p class="section-subtitle">
+Exploring new ideas, systems, and technologies shaping the future of intelligent software.
 </p>
+
+</div>
 
 <div class="experiment-grid">
 
-${cards}
+${experimentCards}
 
 </div>
 
 `
-
-window.scrollTo(0,0)
 
 }

@@ -1,18 +1,23 @@
-function loadConnect(){
+/* =====================================
+   CONNECT SECTION RENDERER
+===================================== */
 
-const container = document.querySelector("#connect .page-content")
+function loadConnect() {
 
-let cards = ""
+const section = document.getElementById("connect")
 
-founderData.connect.forEach(item => {
+const connectLinks = siteData.connect
 
-cards += `
+let linksHTML = ""
 
-<a href="${item.url}" target="_blank" class="connect-card">
 
-<i data-lucide="${item.icon}" class="connect-icon"></i>
+connectLinks.forEach(link => {
 
-<span>${item.name}</span>
+linksHTML += `
+
+<a href="${link.link}" target="_blank">
+
+${link.platform}
 
 </a>
 
@@ -20,22 +25,31 @@ cards += `
 
 })
 
-container.innerHTML = `
 
-<h2>Connect</h2>
+section.innerHTML = `
 
-<p class="section-intro">
-Let's connect and build the future of AI.
+<div class="section-header reveal">
+
+<h2 class="section-title">Connect</h2>
+
+<p class="section-subtitle">
+If you're building interesting things or want to collaborate on AI systems and startups, let's connect.
 </p>
-
-<div class="connect-grid">
-
-${cards}
 
 </div>
 
-`
+<div class="connect-links reveal">
 
-lucide.createIcons()
+${linksHTML}
+
+</div>
+
+<footer class="reveal">
+
+© ${new Date().getFullYear()} Chetan Kumar — C01AI
+
+</footer>
+
+`
 
 }
